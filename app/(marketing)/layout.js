@@ -3,14 +3,12 @@ export const metadata = {
   description: '...',
 }
  
-export default function RootLayout({ children }) {
+export default function marketing({ children }) {
   return (
-    <html lang="en">
-      <body>
-        <h1>This app will render on all page</h1>
+ <>
+    <h1>This app will render on all page</h1>
         {children}
         <h3 className="bottom-0">copyright </h3>
-      </body>
-    </html>
+    </>
   );
 }
