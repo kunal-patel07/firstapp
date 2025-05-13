@@ -1,4 +1,6 @@
 
+let dynamic = 'force-dynamic'
+
 const page = ({params}) => {
     console.log( params)
     let {blogId} =  params

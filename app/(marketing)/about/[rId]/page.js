@@ -2,6 +2,8 @@
 
 import { notFound } from "next/navigation";
 
+
+export let dynamicParams = false    
 export async function generateStaticParams() {
   const res = await fetch("https://jsonplaceholder.typicode.com/posts");
   const data = await res.json();
