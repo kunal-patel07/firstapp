@@ -1,7 +1,8 @@
-// /app/[rId]/page.js
-
 import { notFound } from "next/navigation";
 
+
+
+export let dynamicParams = true;
 export async function generateStaticParams() {
   const res = await fetch("https://jsonplaceholder.typicode.com/posts");
   const data = await res.json();
@@ -18,9 +19,11 @@ const Page = ({ params }) => {
 
   return (
     <div>
-      <h1>Post ID: {rId}</h1>
+      <h1>Posts ID: {rId}
+        
+      </h1>
     </div>
   );
 };
 
-export default Page;
+export default Page; 
