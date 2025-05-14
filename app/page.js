@@ -8,6 +8,7 @@ export default function Home() {
   return (
     <div>
       <h1>Home Page</h1>
+      
       <nav>
         <Link href="/services">Services</Link> 
         <Link href="/about">About</Link>

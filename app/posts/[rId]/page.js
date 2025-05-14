@@ -1,8 +1,9 @@
+// "use client"
 import Comments from "@/components/Comments";
 import Likes from "@/components/Likes";
 import Views from "@/components/Views";
 import { notFound } from "next/navigation";
-import { Suspense } from "react";
+import { Suspense, use } from "react";
 
 export let dynamicParams = false;
 // export async function generateStaticParams() {
@@ -12,8 +13,8 @@ export let dynamicParams = false;
 //   return data.map(({id})=>({rId:`${id}`}));
 // }
 
-const Page = async ({ params }) => {
-  const { rId } =await params;
+const Page =  ({ params }) => {
+  const { rId } = use (params);
 
   if (!/^\d+$/.test(rId)) {
     notFound();
@@ -22,15 +23,11 @@ const Page = async ({ params }) => {
   return (
     <div>
       <h1>Posts ID: {rId}</h1>
-      <Suspense fallback=<div>loading views...</div>>
-       <Views/>
-      </Suspense>
-       <Suspense fallback=<div>loading likes...</div>>
-      <Likes/>
-      </Suspense>
-       <Suspense fallback=<div>loading comments...</div>>
-      <Comments/>
-      </Suspense>
+    <div>
+     <Likes/>
+     <Comments/>
+     <Views/>
+      </div>
     </div>
   );
 };

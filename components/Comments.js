@@ -1,6 +1,6 @@
 
-const Comments = async() => {
-     await new Promise ((resolve)=>setTimeout(resolve,9000))
+const Comments = () => {
+    //  await new Promise ((resolve)=>setTimeout(resolve,9000))
 
   return (
     <div>
