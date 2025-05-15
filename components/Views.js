@@ -1,6 +1,6 @@
 import { resolve } from "styled-jsx/css";
 
-const  Views =async () => {
+const  Views = () => {
 //  await new Promise ((resolve)=>setTimeout(resolve,3000))
   return (
     <div>

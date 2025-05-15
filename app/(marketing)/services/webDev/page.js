@@ -1,7 +1,9 @@
  //  export let dynamic = "force-dynamic"
 // 'use client';
 // import { useState } from 'react';
- 
+
+
+//created function to fetch data and convert into json
 async function fetchData(url) {
     let data = await fetch(url)
     return await data.json()   
@@ -30,7 +32,7 @@ let webDev = async() => {
     return (
         <div>
             {todos.map(({title, completed}) => (
-                <div key={title}>
+                <div key={title}>   
                     <p>{title}</p>
                     {/* <input 
                         type='checkbox' 

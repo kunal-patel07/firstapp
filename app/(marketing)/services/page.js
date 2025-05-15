@@ -8,7 +8,7 @@ let  Services =()=>{
 
 
     let fetchData  =async ()=>{
-        let data  = await fetch("https://.typicode.com/posts?_limit=5");
+        let data  = await fetch("https://jsonplaceholder.typicode.com/posts?_limit=5");
         let res = await data.json()
         setPost(res)
         console.log(res)
