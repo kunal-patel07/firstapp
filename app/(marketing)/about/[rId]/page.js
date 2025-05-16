@@ -1,8 +1,7 @@
+
 // /app/[rId]/page.js
-
 import { notFound } from "next/navigation";
-
-
+import styles from "./rid.module.css"
 export let dynamicParams = false    
 export async function generateStaticParams() {
   const res = await fetch("https://jsonplaceholder.typicode.com/posts");
@@ -11,8 +10,9 @@ export async function generateStaticParams() {
   return data.map(({ id }) => ({ rId: `${id}` }));
 }
 
-const Page = ({ params }) => {
-  const { rId } = params;
+const Page =async ({ params }) => {
+  console.log(styles)
+  const { rId } =await params;
 
   if (!/^\d+$/.test(rId)) {
     notFound();
@@ -20,7 +20,7 @@ const Page = ({ params }) => {
 
   return (
     <div>
-      <h1>Post ID: {rId}</h1>
+      <h1 className={styles.title}>Post ID: {rId}</h1>
     </div>
   );
 };
